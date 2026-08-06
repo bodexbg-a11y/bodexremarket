@@ -1,11 +1,27 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState, type FormEvent } from "react";
 
 type Locale = "bg" | "ar";
 type LocalText = { bg: string; ar: string };
 
 const imageRoot = "https://raw.githubusercontent.com/bodexbg-a11y/bodexremarket/main/public/products";
+
+const catalogImages = [
+  "/products/catalog/tippers.png",
+  "/products/catalog/low-loaders.png",
+  "/products/catalog/platforms.png",
+  "/products/catalog/containers.png",
+  "/products/catalog/tankers.png",
+  "/products/catalog/specialized.png",
+  "/products/catalog/moving-floor.png",
+  "/products/catalog/curtainsiders.png",
+  "/products/catalog/trailers.png",
+  "/products/catalog/truck-bodies.png",
+  "/products/catalog/vehicle-sets.png",
+  "/products/catalog/timber.png",
+];
 
 const featured = [
   {
@@ -287,10 +303,10 @@ export default function Home() {
         <div className="catalog-intro"><p className="eyebrow">{t.fullRange}</p><div><h2>{t.fullTitle}</h2><p>{t.fullText}</p></div></div>
         <div className="catalog-browser">
           <div className="catalog-tabs" role="tablist" aria-label={t.fullRange}>
-            {catalogGroups.map((group, index) => <button key={group.title.bg} id={`catalog-tab-${index}`} role="tab" aria-selected={activeCategory === index} aria-controls="catalog-panel" className={activeCategory === index ? "active" : ""} onClick={() => setActiveCategory(index)}><span>{String(index + 1).padStart(2, "0")}</span>{group.title[locale]}<small>{group.models.length}</small></button>)}
+            {catalogGroups.map((group, index) => <button key={group.title.bg} id={`catalog-tab-${index}`} role="tab" aria-selected={activeCategory === index} aria-controls="catalog-panel" className={activeCategory === index ? "active" : ""} onClick={() => setActiveCategory(index)}><span>{String(index + 1).padStart(2, "0")}</span><span className="catalog-thumb"><Image src={catalogImages[index]} alt="" width={119} height={60} /></span><strong>{group.title[locale]}</strong><small>{group.models.length}</small></button>)}
           </div>
           <div className="catalog-panel" id="catalog-panel" role="tabpanel" aria-labelledby={`catalog-tab-${activeCategory}`}>
-            <div className="catalog-panel-head"><span className="catalog-index">{String(activeCategory + 1).padStart(2, "0")}</span><h3>{selectedGroup.title[locale]}</h3><small>{selectedGroup.models.length} {t.variants}</small></div>
+            <div className="catalog-panel-head"><span className="catalog-index">{String(activeCategory + 1).padStart(2, "0")}</span><h3>{selectedGroup.title[locale]}</h3><small>{selectedGroup.models.length} {t.variants}</small><div className="catalog-visual"><Image src={catalogImages[activeCategory]} alt={selectedGroup.title[locale]} width={119} height={60} /></div></div>
             <div className="model-list">{selectedGroup.models.map((model, modelIndex) => <span key={model.bg}><i>{String(modelIndex + 1).padStart(2, "0")}</i>{model[locale]}</span>)}</div>
           </div>
         </div>
