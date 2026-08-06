@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 
 type Locale = "bg" | "ar";
 type LocalText = { bg: string; ar: string };
@@ -189,13 +189,15 @@ const copy = {
     models: "Разгледайте моделите", years: "години опит", types: "типа превозни средства", axle: "товароносимост на ос",
     range: "Нашата гама", solutionA: "Правилното решение", solutionB: "за всеки товар.",
     rangeText: "От стандартна конфигурация до специализиран проект — всяко полуремарке е проектирано с мисъл за ефективност, безопасност и дълъг живот.",
-    fullRange: "Пълна продуктова линия", fullTitle: "Всички модели на BODEX.", fullText: "12 продуктови групи и 58 изпълнения от официалния каталог. Отворете категория, за да видите наличните варианти.", variants: "изпълнения",
+    fullRange: "Пълна продуктова линия", fullTitle: "Всички модели на BODEX.", fullText: "12 продуктови групи и 58 изпълнения от официалния каталог. Изберете категория, за да видите наличните варианти.", variants: "изпълнения",
     qualityLabel: "Инженерно качество", qualityTitle: "Компоненти, на които можете да разчитате.",
     qualityText: "Шасита с оси SAF и BPW, спирачни системи Wabco или Knorr, LED осветление Hella или Aspöck и хидравлика от водещи производители.",
     qualities: ["Европейски компоненти от доказани марки", "Конструкции от Hardox® и Domex", "Индивидуални и нестандартни решения"],
     since: "BODEX от 1991", aboutTitle: "Опитът се измерва в изминати километри.",
     about: ["BODEX започва с ремонт на полуремаркета и се развива до производител с портфолио от около 100 типа превозни средства.", "Производството съчетава модерна машинна база, собствен инженерен опит и гъвкавост при нестандартни транспортни задачи."],
     talk: "Нека поговорим", contactTitle: "Какво трябва да превозите?", contactText: "Разкажете ни за товара, маршрутите и желаната конфигурация. Ще ви насочим към подходящото решение.", send: "Изпратете запитване",
+    formTitle: "Изпратете запитване", name: "Име и фамилия", company: "Фирма", phone: "Телефон", email: "Имейл", product: "Интересувам се от", choose: "Изберете продуктова група", message: "Съобщение", messagePlaceholder: "Товар, маршрут, желана конфигурация...", consent: "Съгласен/на съм BODEX да използва данните ми, за да отговори на запитването.", mailNote: "След натискане ще се отвори вашата имейл програма с попълненото запитване.",
+    contacts: "Контакти", sofiaOffice: "Офис София", sofiaAddress: "София, България", appointment: "Посещения с предварителна уговорка", registeredOffice: "Адрес на регистрация", burgasAddress: "ул. „Апостол Карамитев“ 10, ет. 5, офис 13, 8000 Бургас",
     footer: "Полуремаркета и транспортни решения за българския и алжирския пазар.",
   },
   ar: {
@@ -205,26 +207,48 @@ const copy = {
     models: "اكتشف الموديلات", years: "سنة من الخبرة", types: "نوعاً من المركبات", axle: "حمولة لكل محور",
     range: "مجموعتنا", solutionA: "الحل المناسب", solutionB: "لكل حمولة.",
     rangeText: "من التجهيز القياسي إلى المشروع المتخصص، صُممت كل نصف مقطورة لتحقيق الكفاءة والسلامة وعمر تشغيل طويل.",
-    fullRange: "مجموعة المنتجات الكاملة", fullTitle: "جميع موديلات BODEX.", fullText: "12 مجموعة و58 تجهيزاً من الكتالوج الرسمي. افتح أي فئة للاطلاع على الخيارات المتاحة.", variants: "تجهيزات",
+    fullRange: "مجموعة المنتجات الكاملة", fullTitle: "جميع موديلات BODEX.", fullText: "12 مجموعة و58 تجهيزاً من الكتالوج الرسمي. اختر فئة للاطلاع على الخيارات المتاحة.", variants: "تجهيزات",
     qualityLabel: "جودة هندسية", qualityTitle: "مكونات يمكنك الاعتماد عليها.",
     qualityText: "هياكل بمحاور SAF وBPW، وأنظمة فرامل Wabco أو Knorr، وإضاءة LED من Hella أو Aspöck، وأنظمة هيدروليكية من أبرز المصنعين.",
     qualities: ["مكونات أوروبية من علامات موثوقة", "هياكل من Hardox® وDomex", "حلول خاصة ومصممة حسب الطلب"],
     since: "BODEX منذ 1991", aboutTitle: "الخبرة تُقاس بالكيلومترات المقطوعة.",
     about: ["بدأت BODEX بإصلاح نصف المقطورات وتطورت إلى مصنع يقدم نحو 100 نوع من المركبات.", "يجمع الإنتاج بين معدات حديثة وخبرة هندسية ومرونة في تنفيذ مهام النقل غير القياسية."],
     talk: "لنتحدث", contactTitle: "ماذا تريد أن تنقل؟", contactText: "أخبرنا عن الحمولة والمسارات والتجهيز المطلوب، وسنساعدك في اختيار الحل المناسب.", send: "أرسل طلباً",
+    formTitle: "أرسل طلباً", name: "الاسم الكامل", company: "الشركة", phone: "رقم الهاتف", email: "البريد الإلكتروني", product: "المنتج المطلوب", choose: "اختر مجموعة المنتجات", message: "الرسالة", messagePlaceholder: "الحمولة، المسار، والتجهيز المطلوب...", consent: "أوافق على استخدام BODEX لبياناتي من أجل الرد على هذا الطلب.", mailNote: "بعد الضغط، سيفتح تطبيق البريد الإلكتروني مع تفاصيل الطلب المكتملة.",
+    contacts: "معلومات الاتصال", sofiaOffice: "مكتب صوفيا", sofiaAddress: "صوفيا، بلغاريا", appointment: "الزيارة بموعد مسبق", registeredOffice: "العنوان المسجل", burgasAddress: "10 شارع أبوستول كاراميتيف، الطابق 5، مكتب 13، 8000 بورغاس",
     footer: "نصف مقطورات وحلول نقل للسوقين البلغاري والجزائري.",
   },
 };
 
 export default function Home() {
   const [locale, setLocale] = useState<Locale>("bg");
+  const [activeCategory, setActiveCategory] = useState(0);
   const t = copy[locale];
   const isArabic = locale === "ar";
+  const selectedGroup = catalogGroups[activeCategory];
 
   useEffect(() => {
     document.documentElement.lang = isArabic ? "ar-DZ" : "bg";
     document.documentElement.dir = isArabic ? "rtl" : "ltr";
   }, [isArabic]);
+
+  function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const subject = `${isArabic ? "طلب من الموقع" : "Запитване от сайта"} — ${data.get("product")}`;
+    const body = [
+      `${t.name}: ${data.get("name")}`,
+      `${t.company}: ${data.get("company") || "—"}`,
+      `${t.phone}: ${data.get("phone")}`,
+      `${t.email}: ${data.get("email")}`,
+      `${t.product}: ${data.get("product")}`,
+      "",
+      `${t.message}:`,
+      String(data.get("message")),
+    ].join("\n");
+
+    window.location.href = `mailto:bodexbg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
 
   return (
     <main dir={isArabic ? "rtl" : "ltr"} className={isArabic ? "arabic" : "bulgarian"}>
@@ -261,8 +285,14 @@ export default function Home() {
         </div>
 
         <div className="catalog-intro"><p className="eyebrow">{t.fullRange}</p><div><h2>{t.fullTitle}</h2><p>{t.fullText}</p></div></div>
-        <div className="catalog-groups">
-          {catalogGroups.map((group, index) => <details key={group.title.bg} open={index === 0}><summary><span className="catalog-index">{String(index + 1).padStart(2, "0")}</span><strong>{group.title[locale]}</strong><small>{group.models.length} {t.variants}</small><b aria-hidden="true">+</b></summary><div className="model-list">{group.models.map((model, modelIndex) => <span key={model.bg}><i>{String(modelIndex + 1).padStart(2, "0")}</i>{model[locale]}</span>)}</div></details>)}
+        <div className="catalog-browser">
+          <div className="catalog-tabs" role="tablist" aria-label={t.fullRange}>
+            {catalogGroups.map((group, index) => <button key={group.title.bg} id={`catalog-tab-${index}`} role="tab" aria-selected={activeCategory === index} aria-controls="catalog-panel" className={activeCategory === index ? "active" : ""} onClick={() => setActiveCategory(index)}><span>{String(index + 1).padStart(2, "0")}</span>{group.title[locale]}<small>{group.models.length}</small></button>)}
+          </div>
+          <div className="catalog-panel" id="catalog-panel" role="tabpanel" aria-labelledby={`catalog-tab-${activeCategory}`}>
+            <div className="catalog-panel-head"><span className="catalog-index">{String(activeCategory + 1).padStart(2, "0")}</span><h3>{selectedGroup.title[locale]}</h3><small>{selectedGroup.models.length} {t.variants}</small></div>
+            <div className="model-list">{selectedGroup.models.map((model, modelIndex) => <span key={model.bg}><i>{String(modelIndex + 1).padStart(2, "0")}</i>{model[locale]}</span>)}</div>
+          </div>
         </div>
       </section>
 
@@ -270,7 +300,28 @@ export default function Home() {
 
       <section className="section about" id="about"><p className="eyebrow">{t.since}</p><div><h2>{t.aboutTitle}</h2><div className="about-copy">{t.about.map(item => <p key={item}>{item}</p>)}</div></div></section>
 
-      <section className="contact" id="contact"><div><p className="eyebrow">{t.talk}</p><h2>{t.contactTitle}</h2></div><div className="contact-card"><p>{t.contactText}</p><a className="button dark" href="mailto:bodexbg@gmail.com?subject=BODEX%20inquiry">{t.send} <span>→</span></a><div className="contact-lines"><a href="tel:+359899809607">+359 89 980 9607</a><a href="mailto:bodexbg@gmail.com">bodexbg@gmail.com</a></div></div></section>
+      <section className="contact" id="contact">
+        <div className="contact-intro"><p className="eyebrow">{t.talk}</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p>
+          <div className="office-grid">
+            <article><span>{t.sofiaOffice}</span><strong>{t.sofiaAddress}</strong><small>{t.appointment}</small><a href="tel:+359899809607">+359 89 980 9607</a></article>
+            <article><span>{t.registeredOffice}</span><strong>{t.burgasAddress}</strong><a href="mailto:bodexbg@gmail.com">bodexbg@gmail.com</a></article>
+          </div>
+        </div>
+        <form className="contact-form" onSubmit={handleContactSubmit}>
+          <h3>{t.formTitle}</h3>
+          <div className="form-grid">
+            <label><span>{t.name} *</span><input name="name" autoComplete="name" required /></label>
+            <label><span>{t.company}</span><input name="company" autoComplete="organization" /></label>
+            <label><span>{t.phone} *</span><input name="phone" type="tel" autoComplete="tel" required /></label>
+            <label><span>{t.email} *</span><input name="email" type="email" autoComplete="email" required /></label>
+            <label className="full"><span>{t.product} *</span><select name="product" defaultValue="" required><option value="" disabled>{t.choose}</option>{catalogGroups.map(group => <option key={group.title.bg} value={group.title[locale]}>{group.title[locale]}</option>)}</select></label>
+            <label className="full"><span>{t.message} *</span><textarea name="message" rows={5} placeholder={t.messagePlaceholder} required /></label>
+          </div>
+          <label className="consent"><input name="consent" type="checkbox" required /><span>{t.consent}</span></label>
+          <button className="button dark" type="submit">{t.send} <span>→</span></button>
+          <small className="mail-note">{t.mailNote}</small>
+        </form>
+      </section>
 
       <footer><a className="brand brand-footer" href="#top"><span className="brand-mark">B</span><span><strong>BODEX</strong><small>BULGARIA · ALGERIA</small></span></a><p>{t.footer}</p><p>© {new Date().getFullYear()} BODEX</p></footer>
     </main>
