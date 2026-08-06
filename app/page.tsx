@@ -226,40 +226,40 @@ const catalogGroups: Array<{ title: LocalText; models: LocalText[] }> = [
 
 const copy = {
   bg: {
-    nav: ["Продукти", "Качество", "За BODEX"], request: "Запитване",
+    nav: ["Продукти", "Качество", "За BODEX BULGARIA"], request: "Запитване",
     eyebrow: "Полуремаркета за професионалисти", heroA: "Създадени за", heroB: "тежката работа.",
     lead: "Над 30 години инженерна традиция. Около 100 типа превозни средства, конфигурирани за вашия товар и маршрут.",
     models: "Разгледайте моделите", years: "години опит", types: "типа превозни средства", axle: "товароносимост на ос",
     range: "Нашата гама", solutionA: "Правилното решение", solutionB: "за всеки товар.",
     rangeText: "От стандартна конфигурация до специализиран проект — всяко полуремарке е проектирано с мисъл за ефективност, безопасност и дълъг живот.",
-    fullRange: "Пълна продуктова линия", fullTitle: "Всички модели на BODEX.", fullText: "12 продуктови групи и 58 изпълнения от официалния каталог. Изберете категория, за да видите наличните варианти.", variants: "изпълнения",
+    fullRange: "Пълна продуктова линия", fullTitle: "Всички модели на BODEX BULGARIA.", fullText: "12 продуктови групи и 58 изпълнения от официалния каталог. Изберете категория, за да видите наличните варианти.", variants: "изпълнения",
     storageLabel: "Допълнителна продуктова гама", storageTitle: "Бочки и цистерни за транспорт.", storageText: "В нашата гама ще намерите метални бочки и съдове за превоз на гориво, дизелово гориво, бензин, мазут и масла. Предлагаме и продуктови цистерни с обем 40 м³ от хранителна неръждаема стомана.", storageCustom: "Оферта по запитване", storageButton: "Запитване за цистерна",
     qualityLabel: "Инженерно качество", qualityTitle: "Компоненти, на които можете да разчитате.",
     qualityText: "Шасита с оси SAF и BPW, спирачни системи Wabco или Knorr, LED осветление Hella или Aspöck и хидравлика от водещи производители.",
     qualities: ["Европейски компоненти от доказани марки", "Конструкции от Hardox® и Domex", "Индивидуални и нестандартни решения"],
-    since: "BODEX за България", aboutTitle: "Правилното решение започва с правилния избор.",
-    about: ["Като дилър на BODEX представяме широка гама полуремаркета, транспортни решения, метални бочки и цистерни за българския пазар.", "Помагаме при избора на подходящ модел и конфигурация според товара, маршрутите и конкретната транспортна задача."],
+    since: "BODEX BULGARIA", aboutTitle: "Правилното решение започва с правилния избор.",
+    about: ["BODEX BULGARIA е дилър с широка гама полуремаркета, транспортни решения, метални бочки и цистерни за българския пазар.", "Помагаме при избора на подходящ модел и конфигурация според товара, маршрутите и конкретната транспортна задача."],
     talk: "Нека поговорим", contactTitle: "Какво трябва да превозите?", contactText: "Разкажете ни за товара, маршрутите и желаната конфигурация. Ще ви насочим към подходящото решение.", send: "Изпратете запитване",
-    formTitle: "Изпратете запитване", name: "Име и фамилия", company: "Фирма", phone: "Телефон", email: "Имейл", product: "Интересувам се от", choose: "Изберете продуктова група", message: "Съобщение", messagePlaceholder: "Товар, маршрут, желана конфигурация...", consent: "Съгласен/на съм BODEX да използва данните ми, за да отговори на запитването.", mailNote: "След натискане ще се отвори вашата имейл програма с попълненото запитване.",
+    formTitle: "Изпратете запитване", name: "Име и фамилия", company: "Фирма", phone: "Телефон", email: "Имейл", product: "Интересувам се от", choose: "Изберете продуктова група", message: "Съобщение", messagePlaceholder: "Товар, маршрут, желана конфигурация...", consent: "Съгласен/на съм BODEX BULGARIA да използва данните ми, за да отговори на запитването.", mailNote: "След натискане ще се отвори вашата имейл програма с попълненото запитване.",
     contacts: "Контакти", sofiaOffice: "Офис София", sofiaAddress: "гр. София 1000, ул. „Три уши“ 6, ет. 2, офис 5", appointment: "Посещения с предварителна уговорка", registeredOffice: "Адрес на регистрация", burgasAddress: "ул. „Апостол Карамитев“ 10, ет. 5, офис 13, 8000 Бургас",
     footer: "Полуремаркета и транспортни решения за българския и алжирския пазар.",
   },
   ar: {
-    nav: ["المنتجات", "الجودة", "عن BODEX"], request: "طلب عرض",
+    nav: ["المنتجات", "الجودة", "عن BODEX BULGARIA"], request: "طلب عرض",
     eyebrow: "نصف مقطورات للمحترفين", heroA: "مصممة من أجل", heroB: "أصعب الأعمال.",
     lead: "أكثر من 30 سنة من الخبرة الهندسية. نحو 100 نوع من المركبات مجهزة حسب حمولتك ومسارك.",
     models: "اكتشف الموديلات", years: "سنة من الخبرة", types: "نوعاً من المركبات", axle: "حمولة لكل محور",
     range: "مجموعتنا", solutionA: "الحل المناسب", solutionB: "لكل حمولة.",
     rangeText: "من التجهيز القياسي إلى المشروع المتخصص، صُممت كل نصف مقطورة لتحقيق الكفاءة والسلامة وعمر تشغيل طويل.",
-    fullRange: "مجموعة المنتجات الكاملة", fullTitle: "جميع موديلات BODEX.", fullText: "12 مجموعة و58 تجهيزاً من الكتالوج الرسمي. اختر فئة للاطلاع على الخيارات المتاحة.", variants: "تجهيزات",
+    fullRange: "مجموعة المنتجات الكاملة", fullTitle: "جميع موديلات BODEX BULGARIA.", fullText: "12 مجموعة و58 تجهيزاً من الكتالوج الرسمي. اختر فئة للاطلاع على الخيارات المتاحة.", variants: "تجهيزات",
     storageLabel: "مجموعة منتجات إضافية", storageTitle: "خزانات وصهاريج للنقل.", storageText: "تشمل مجموعتنا حاويات معدنية لنقل الوقود ووقود الديزل والبنزين والمازوت والزيوت. كما نقدم صهاريج للمواد الغذائية بسعة 40 م³ من الفولاذ المقاوم للصدأ المخصص للأغذية.", storageCustom: "عرض سعر عند الطلب", storageButton: "طلب صهريج",
     qualityLabel: "جودة هندسية", qualityTitle: "مكونات يمكنك الاعتماد عليها.",
     qualityText: "هياكل بمحاور SAF وBPW، وأنظمة فرامل Wabco أو Knorr، وإضاءة LED من Hella أو Aspöck، وأنظمة هيدروليكية من أبرز المصنعين.",
     qualities: ["مكونات أوروبية من علامات موثوقة", "هياكل من Hardox® وDomex", "حلول خاصة ومصممة حسب الطلب"],
-    since: "BODEX في بلغاريا", aboutTitle: "الحل المناسب يبدأ بالاختيار المناسب.",
-    about: ["بصفتنا موزعاً لمنتجات BODEX، نقدم للسوق البلغاري مجموعة واسعة من نصف المقطورات وحلول النقل والخزانات والصهاريج المعدنية.", "نساعدك في اختيار الموديل والتجهيز المناسبين حسب الحمولة والمسارات ومهمة النقل المطلوبة."],
+    since: "BODEX BULGARIA", aboutTitle: "الحل المناسب يبدأ بالاختيار المناسب.",
+    about: ["BODEX BULGARIA موزع يقدم للسوق البلغاري مجموعة واسعة من نصف المقطورات وحلول النقل والخزانات والصهاريج المعدنية.", "نساعدك في اختيار الموديل والتجهيز المناسبين حسب الحمولة والمسارات ومهمة النقل المطلوبة."],
     talk: "لنتحدث", contactTitle: "ماذا تريد أن تنقل؟", contactText: "أخبرنا عن الحمولة والمسارات والتجهيز المطلوب، وسنساعدك في اختيار الحل المناسب.", send: "أرسل طلباً",
-    formTitle: "أرسل طلباً", name: "الاسم الكامل", company: "الشركة", phone: "رقم الهاتف", email: "البريد الإلكتروني", product: "المنتج المطلوب", choose: "اختر مجموعة المنتجات", message: "الرسالة", messagePlaceholder: "الحمولة، المسار، والتجهيز المطلوب...", consent: "أوافق على استخدام BODEX لبياناتي من أجل الرد على هذا الطلب.", mailNote: "بعد الضغط، سيفتح تطبيق البريد الإلكتروني مع تفاصيل الطلب المكتملة.",
+    formTitle: "أرسل طلباً", name: "الاسم الكامل", company: "الشركة", phone: "رقم الهاتف", email: "البريد الإلكتروني", product: "المنتج المطلوب", choose: "اختر مجموعة المنتجات", message: "الرسالة", messagePlaceholder: "الحمولة، المسار، والتجهيز المطلوب...", consent: "أوافق على استخدام BODEX BULGARIA لبياناتي من أجل الرد على هذا الطلب.", mailNote: "بعد الضغط، سيفتح تطبيق البريد الإلكتروني مع تفاصيل الطلب المكتملة.",
     contacts: "معلومات الاتصال", sofiaOffice: "مكتب صوفيا", sofiaAddress: "6 شارع تري أوشي، الطابق 2، مكتب 5، 1000 صوفيا", appointment: "الزيارة بموعد مسبق", registeredOffice: "العنوان المسجل", burgasAddress: "10 شارع أبوستول كاراميتيف، الطابق 5، مكتب 13، 8000 بورغاس",
     footer: "نصف مقطورات وحلول نقل للسوقين البلغاري والجزائري.",
   },
@@ -298,7 +298,7 @@ export default function Home() {
   return (
     <main dir={isArabic ? "rtl" : "ltr"} className={isArabic ? "arabic" : "bulgarian"}>
       <header className="nav-wrap">
-        <a className="brand" href="#top" aria-label="BODEX начало"><span className="brand-mark">B</span><span><strong>BODEX</strong><small>BULGARIA · ALGERIA</small></span></a>
+        <a className="brand" href="#top" aria-label="BODEX BULGARIA начало"><span className="brand-mark">B</span><span><strong>BODEX BULGARIA</strong><small>TRAILERS · TANKS</small></span></a>
         <nav aria-label={isArabic ? "التنقل الرئيسي" : "Основна навигация"}>
           <a href="#products">{t.nav[0]}</a><a href="#quality">{t.nav[1]}</a><a href="#about">{t.nav[2]}</a>
         </nav>
@@ -318,7 +318,7 @@ export default function Home() {
           <div className="hero-actions"><a className="button" href="#products">{t.models} <span>→</span></a><a className="text-link" href="tel:+359899809607">+359 89 980 9607</a></div>
           <div className="hero-stats"><div><strong>30+</strong><span>{t.years}</span></div><div><strong>100</strong><span>{t.types}</span></div><div><strong>12 t</strong><span>{t.axle}</span></div></div>
         </div>
-        <div className="hero-visual"><div className="hero-label"><span>01</span> SUPER LIGHT</div><img src={`${imageRoot}/super-light.jpg`} alt="BODEX SUPER LIGHT"/><div className="yellow-block" aria-hidden="true"/></div>
+        <div className="hero-visual"><div className="hero-label"><span>01</span> SUPER LIGHT</div><img src={`${imageRoot}/super-light.jpg`} alt="BODEX BULGARIA SUPER LIGHT"/><div className="yellow-block" aria-hidden="true"/></div>
       </section>
 
       <section className="ticker"><span>SAF / BPW</span><i>•</i><span>WABCO / KNORR</span><i>•</i><span>HARDOX®</span><i>•</i><span>HELLA / ASPÖCK LED</span><i>•</i><span>HYVA / BINOTTO</span></section>
@@ -352,7 +352,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="quality" id="quality"><div className="quality-copy"><p className="eyebrow light">{t.qualityLabel}</p><h2>{t.qualityTitle}</h2><p>{t.qualityText}</p><ul>{t.qualities.map((item, index) => <li key={item}><span>0{index + 1}</span>{item}</li>)}</ul></div><div className="quality-image"><img src={`${imageRoot}/steel-tipper.jpg`} alt="BODEX"/></div></section>
+      <section className="quality" id="quality"><div className="quality-copy"><p className="eyebrow light">{t.qualityLabel}</p><h2>{t.qualityTitle}</h2><p>{t.qualityText}</p><ul>{t.qualities.map((item, index) => <li key={item}><span>0{index + 1}</span>{item}</li>)}</ul></div><div className="quality-image"><img src={`${imageRoot}/steel-tipper.jpg`} alt="BODEX BULGARIA"/></div></section>
 
       <section className="section about" id="about"><p className="eyebrow">{t.since}</p><div><h2>{t.aboutTitle}</h2><div className="about-copy">{t.about.map(item => <p key={item}>{item}</p>)}</div></div></section>
 
@@ -379,7 +379,7 @@ export default function Home() {
         </form>
       </section>
 
-      <footer><a className="brand brand-footer" href="#top"><span className="brand-mark">B</span><span><strong>BODEX</strong><small>BULGARIA · ALGERIA</small></span></a><p>{t.footer}</p><p>© {new Date().getFullYear()} BODEX</p></footer>
+      <footer><a className="brand brand-footer" href="#top"><span className="brand-mark">B</span><span><strong>BODEX BULGARIA</strong><small>TRAILERS · TANKS</small></span></a><p>{t.footer}</p><p>© {new Date().getFullYear()} BODEX BULGARIA</p></footer>
     </main>
   );
 }

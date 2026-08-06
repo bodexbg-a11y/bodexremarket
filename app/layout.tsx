@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BODEX Bulgaria | Полуремаркета и транспортни решения",
-  description: "Самосвални, нискорамни, платформени и специализирани полуремаркета BODEX за българския пазар.",
+  title: "BODEX BULGARIA | Полуремаркета и транспортни решения",
+  description: "Самосвални, нискорамни, платформени и специализирани полуремаркета BODEX BULGARIA за българския пазар.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
