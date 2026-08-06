@@ -263,7 +263,7 @@ export default function Home() {
       String(data.get("message")),
     ].join("\n");
 
-    window.location.href = `mailto:bodexbg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:boteksbg@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (
@@ -320,7 +320,7 @@ export default function Home() {
         <div className="contact-intro"><p className="eyebrow">{t.talk}</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p>
           <div className="office-grid">
             <article><span>{t.sofiaOffice}</span><strong>{t.sofiaAddress}</strong><small>{t.appointment}</small><a href="tel:+359899809607">+359 89 980 9607</a></article>
-            <article><span>{t.registeredOffice}</span><strong>{t.burgasAddress}</strong><a href="mailto:bodexbg@gmail.com">bodexbg@gmail.com</a></article>
+            <article><span>{t.registeredOffice}</span><strong>{t.burgasAddress}</strong><a href="mailto:boteksbg@gmail.com">boteksbg@gmail.com</a></article>
           </div>
         </div>
         <form className="contact-form" onSubmit={handleContactSubmit}>
