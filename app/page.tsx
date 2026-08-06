@@ -2,28 +2,28 @@ const products = [
   {
     title: "Самосвални полуремаркета",
     subtitle: "Стоманени и алуминиеви",
-    image: "/products/steel-tipper.jpg",
+    image: "https://raw.githubusercontent.com/bodexbg-a11y/bodexremarket/main/public/products/steel-tipper.jpg",
     text: "Конфигурации с клапа, комбинирана врата и решения за скрап. Изработка от Hardox® 450/500 Tuf и Domex.",
     tags: ["2–4 оси", "Hardox®", "По поръчка"],
   },
   {
     title: "SUPER LIGHT",
     subtitle: "Алуминиева рама и кош",
-    image: "/products/super-light.jpg",
+    image: "https://raw.githubusercontent.com/bodexbg-a11y/bodexremarket/main/public/products/super-light.jpg",
     text: "Олекотена конструкция с оребрен или панелен алуминиев кош за максимален полезен товар.",
     tags: ["Ниско тегло", "3 оси", "Алуминий"],
   },
   {
     title: "Нискорамни полуремаркета",
     subtitle: "За тежка и извънгабаритна техника",
-    image: "/products/low-loader.jpg",
+    image: "https://raw.githubusercontent.com/bodexbg-a11y/bodexremarket/main/public/products/low-loader.jpg",
     text: "Триосни, четириосни и многоосни изпълнения, включително управляеми оси за сложни транспортни задачи.",
     tags: ["3+ оси", "Управляеми оси", "Тежки товари"],
   },
   {
     title: "Платформи",
     subtitle: "Бордови и разтегателни",
-    image: "/products/platform.jpg",
+    image: "https://raw.githubusercontent.com/bodexbg-a11y/bodexremarket/main/public/products/platform.jpg",
     text: "Бордови платформи, изпълнения с кран HDS и многофункционални разтегателни конструкции.",
     tags: ["Разтегателни", "HDS", "Многофункционални"],
   },
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
         <div className="hero-visual">
           <div className="hero-label"><span>01</span> SUPER LIGHT</div>
-          <img src="/products/super-light.jpg" alt="Алуминиево полуремарке BODEX SUPER LIGHT" />
+          <img src="https://raw.githubusercontent.com/bodexbg-a11y/bodexremarket/main/public/products/super-light.jpg" alt="Алуминиево полуремарке BODEX SUPER LIGHT" />
           <div className="yellow-block" aria-hidden="true"></div>
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function Home() {
             <li><span>03</span> Индивидуални и нестандартни решения</li>
           </ul>
         </div>
-        <div className="quality-image"><img src="/products/steel-tipper.jpg" alt="Стоманено самосвално полуремарке BODEX" /></div>
+        <div className="quality-image"><img src="https://raw.githubusercontent.com/bodexbg-a11y/bodexremarket/main/public/products/steel-tipper.jpg" alt="Стоманено самосвално полуремарке BODEX" /></div>
       </section>
 
       <section className="section about" id="about">
