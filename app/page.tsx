@@ -23,6 +23,33 @@ const catalogImages = [
   "/products/catalog/timber.png",
 ];
 
+const storageProducts: Array<{ title: LocalText; use: LocalText }> = [
+  {
+    title: { bg: "Бочки за гориво", ar: "خزانات لنقل الوقود" },
+    use: { bg: "Метални съдове за транспортиране на горива", ar: "حاويات معدنية لنقل الوقود" },
+  },
+  {
+    title: { bg: "Бочки за дизелово гориво", ar: "خزانات لنقل وقود الديزل" },
+    use: { bg: "Изпълнение за транспорт на дизелово гориво", ar: "تنفيذ مخصص لنقل وقود الديزل" },
+  },
+  {
+    title: { bg: "Бочки за бензин", ar: "خزانات لنقل البنزين" },
+    use: { bg: "Метални съдове за транспорт на бензин", ar: "حاويات معدنية مخصصة لنقل البنزين" },
+  },
+  {
+    title: { bg: "Бочки за мазут", ar: "خزانات لنقل المازوت" },
+    use: { bg: "За транспортиране на мазут; изолация и подгряване по задание", ar: "لنقل المازوت، مع العزل والتسخين حسب الطلب" },
+  },
+  {
+    title: { bg: "Бочки за масла", ar: "خزانات لنقل الزيوت" },
+    use: { bg: "За технически, моторни и други масла", ar: "للزيوت التقنية وزيوت المحركات وغيرها" },
+  },
+  {
+    title: { bg: "Продуктова цистерна 40 м³", ar: "صهريج للمواد الغذائية 40 م³" },
+    use: { bg: "Изработена от хранителна неръждаема стомана", ar: "مصنوع من الفولاذ المقاوم للصدأ المخصص للمواد الغذائية" },
+  },
+];
+
 const featured = [
   {
     title: { bg: "Самосвални полуремаркета", ar: "نصف مقطورات قلابة" },
@@ -206,6 +233,7 @@ const copy = {
     range: "Нашата гама", solutionA: "Правилното решение", solutionB: "за всеки товар.",
     rangeText: "От стандартна конфигурация до специализиран проект — всяко полуремарке е проектирано с мисъл за ефективност, безопасност и дълъг живот.",
     fullRange: "Пълна продуктова линия", fullTitle: "Всички модели на BODEX.", fullText: "12 продуктови групи и 58 изпълнения от официалния каталог. Изберете категория, за да видите наличните варианти.", variants: "изпълнения",
+    storageLabel: "Допълнително производство", storageTitle: "Бочки и цистерни за транспорт.", storageText: "BODEX изработва метални бочки и съдове за превоз на гориво, дизелово гориво, бензин, мазут и масла. Предлагаме и продуктови цистерни с обем 40 м³ от хранителна неръждаема стомана.", storageCustom: "Изработка по запитване", storageButton: "Запитване за цистерна",
     qualityLabel: "Инженерно качество", qualityTitle: "Компоненти, на които можете да разчитате.",
     qualityText: "Шасита с оси SAF и BPW, спирачни системи Wabco или Knorr, LED осветление Hella или Aspöck и хидравлика от водещи производители.",
     qualities: ["Европейски компоненти от доказани марки", "Конструкции от Hardox® и Domex", "Индивидуални и нестандартни решения"],
@@ -224,6 +252,7 @@ const copy = {
     range: "مجموعتنا", solutionA: "الحل المناسب", solutionB: "لكل حمولة.",
     rangeText: "من التجهيز القياسي إلى المشروع المتخصص، صُممت كل نصف مقطورة لتحقيق الكفاءة والسلامة وعمر تشغيل طويل.",
     fullRange: "مجموعة المنتجات الكاملة", fullTitle: "جميع موديلات BODEX.", fullText: "12 مجموعة و58 تجهيزاً من الكتالوج الرسمي. اختر فئة للاطلاع على الخيارات المتاحة.", variants: "تجهيزات",
+    storageLabel: "إنتاج إضافي", storageTitle: "خزانات وصهاريج للنقل.", storageText: "تصنع BODEX حاويات معدنية لنقل الوقود ووقود الديزل والبنزين والمازوت والزيوت. كما نقدم صهاريج للمواد الغذائية بسعة 40 م³ مصنوعة من الفولاذ المقاوم للصدأ المخصص للأغذية.", storageCustom: "تصنيع حسب الطلب", storageButton: "طلب صهريج",
     qualityLabel: "جودة هندسية", qualityTitle: "مكونات يمكنك الاعتماد عليها.",
     qualityText: "هياكل بمحاور SAF وBPW، وأنظمة فرامل Wabco أو Knorr، وإضاءة LED من Hella أو Aspöck، وأنظمة هيدروليكية من أبرز المصنعين.",
     qualities: ["مكونات أوروبية من علامات موثوقة", "هياكل من Hardox® وDomex", "حلول خاصة ومصممة حسب الطلب"],
@@ -312,6 +341,17 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="storage section" id="storage">
+        <div className="storage-head">
+          <div><p className="eyebrow">{t.storageLabel}</p><h2>{t.storageTitle}</h2></div>
+          <div><p>{t.storageText}</p><a className="button" href="#contact">{t.storageButton} <span>→</span></a></div>
+        </div>
+        <div className="storage-showcase">
+          <div className="storage-image"><Image src="/products/storage-tanks.jpg" alt={t.storageTitle} width={1693} height={929} sizes="(max-width: 900px) 100vw, 62vw" /></div>
+          <div className="storage-list">{storageProducts.map((product, index) => <article key={product.title.bg}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{product.title[locale]}</h3><p>{product.use[locale]}</p><small>{t.storageCustom}</small></div></article>)}</div>
+        </div>
+      </section>
+
       <section className="quality" id="quality"><div className="quality-copy"><p className="eyebrow light">{t.qualityLabel}</p><h2>{t.qualityTitle}</h2><p>{t.qualityText}</p><ul>{t.qualities.map((item, index) => <li key={item}><span>0{index + 1}</span>{item}</li>)}</ul></div><div className="quality-image"><img src={`${imageRoot}/steel-tipper.jpg`} alt="BODEX"/></div></section>
 
       <section className="section about" id="about"><p className="eyebrow">{t.since}</p><div><h2>{t.aboutTitle}</h2><div className="about-copy">{t.about.map(item => <p key={item}>{item}</p>)}</div></div></section>
@@ -330,7 +370,7 @@ export default function Home() {
             <label><span>{t.company}</span><input name="company" autoComplete="organization" /></label>
             <label><span>{t.phone} *</span><input name="phone" type="tel" autoComplete="tel" required /></label>
             <label><span>{t.email} *</span><input name="email" type="email" autoComplete="email" required /></label>
-            <label className="full"><span>{t.product} *</span><select name="product" defaultValue="" required><option value="" disabled>{t.choose}</option>{catalogGroups.map(group => <option key={group.title.bg} value={group.title[locale]}>{group.title[locale]}</option>)}</select></label>
+            <label className="full"><span>{t.product} *</span><select name="product" defaultValue="" required><option value="" disabled>{t.choose}</option>{catalogGroups.map(group => <option key={group.title.bg} value={group.title[locale]}>{group.title[locale]}</option>)}<optgroup label={t.storageLabel}>{storageProducts.map(product => <option key={product.title.bg} value={product.title[locale]}>{product.title[locale]}</option>)}</optgroup></select></label>
             <label className="full"><span>{t.message} *</span><textarea name="message" rows={5} placeholder={t.messagePlaceholder} required /></label>
           </div>
           <label className="consent"><input name="consent" type="checkbox" required /><span>{t.consent}</span></label>
