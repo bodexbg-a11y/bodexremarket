@@ -23,30 +23,36 @@ const catalogImages = [
   "/products/catalog/timber.png",
 ];
 
-const storageProducts: Array<{ title: LocalText; use: LocalText }> = [
+const storageProducts: Array<{ title: LocalText; use: LocalText; image: string }> = [
   {
     title: { bg: "Бочки за гориво", ar: "خزانات لنقل الوقود" },
     use: { bg: "Метални съдове за транспортиране на горива", ar: "حاويات معدنية لنقل الوقود" },
+    image: "/products/tanks/fuel.jpg",
   },
   {
     title: { bg: "Бочки за дизелово гориво", ar: "خزانات لنقل وقود الديزل" },
     use: { bg: "Изпълнение за транспорт на дизелово гориво", ar: "تنفيذ مخصص لنقل وقود الديزل" },
+    image: "/products/tanks/diesel.jpg",
   },
   {
     title: { bg: "Бочки за бензин", ar: "خزانات لنقل البنزين" },
     use: { bg: "Метални съдове за транспорт на бензин", ar: "حاويات معدنية مخصصة لنقل البنزين" },
+    image: "/products/tanks/petrol.jpg",
   },
   {
     title: { bg: "Бочки за мазут", ar: "خزانات لنقل المازوت" },
     use: { bg: "За транспортиране на мазут; изолация и подгряване по задание", ar: "لنقل المازوت، مع العزل والتسخين حسب الطلب" },
+    image: "/products/tanks/mazut.jpg",
   },
   {
     title: { bg: "Бочки за масла", ar: "خزانات لنقل الزيوت" },
     use: { bg: "За технически, моторни и други масла", ar: "للزيوت التقنية وزيوت المحركات وغيرها" },
+    image: "/products/tanks/oils.jpg",
   },
   {
     title: { bg: "Продуктова цистерна 40 м³", ar: "صهريج للمواد الغذائية 40 م³" },
     use: { bg: "От хранителна неръждаема стомана", ar: "من الفولاذ المقاوم للصدأ المخصص للمواد الغذائية" },
+    image: "/products/tanks/food.jpg",
   },
 ];
 
@@ -268,9 +274,11 @@ const copy = {
 export default function Home() {
   const [locale, setLocale] = useState<Locale>("bg");
   const [activeCategory, setActiveCategory] = useState(0);
+  const [activeStorage, setActiveStorage] = useState(0);
   const t = copy[locale];
   const isArabic = locale === "ar";
   const selectedGroup = catalogGroups[activeCategory];
+  const selectedStorage = storageProducts[activeStorage];
 
   useEffect(() => {
     document.documentElement.lang = isArabic ? "ar-DZ" : "bg";
@@ -346,9 +354,12 @@ export default function Home() {
           <div><p className="eyebrow">{t.storageLabel}</p><h2>{t.storageTitle}</h2></div>
           <div><p>{t.storageText}</p><a className="button" href="#contact">{t.storageButton} <span>→</span></a></div>
         </div>
-        <div className="storage-showcase">
-          <div className="storage-image"><Image src="/products/storage-tanks.jpg" alt={t.storageTitle} width={1693} height={929} sizes="(max-width: 900px) 100vw, 62vw" /></div>
-          <div className="storage-list">{storageProducts.map((product, index) => <article key={product.title.bg}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{product.title[locale]}</h3><p>{product.use[locale]}</p><small>{t.storageCustom}</small></div></article>)}</div>
+        <div className="storage-browser">
+          <div className="storage-feature" id="storage-panel" role="tabpanel" aria-labelledby={`storage-tab-${activeStorage}`}>
+            <Image src={selectedStorage.image} alt={selectedStorage.title[locale]} width={620} height={620} sizes="(max-width: 900px) 100vw, 52vw" />
+            <div className="storage-caption"><span>{String(activeStorage + 1).padStart(2, "0")}</span><div><h3>{selectedStorage.title[locale]}</h3><p>{selectedStorage.use[locale]}</p></div><small>{t.storageCustom}</small></div>
+          </div>
+          <div className="storage-tabs" role="tablist" aria-label={t.storageTitle}>{storageProducts.map((product, index) => <button key={product.title.bg} id={`storage-tab-${index}`} role="tab" aria-selected={activeStorage === index} aria-controls="storage-panel" className={activeStorage === index ? "active" : ""} onClick={() => setActiveStorage(index)}><Image src={product.image} alt="" width={620} height={620} /><span>{String(index + 1).padStart(2, "0")}</span><strong>{product.title[locale]}</strong></button>)}</div>
         </div>
       </section>
 
